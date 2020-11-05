@@ -29,20 +29,38 @@ var droplists = document.querySelectorAll('.window__droplist');
 var windowMintitles = document.querySelectorAll('.window__mintitle');
 var windowDropitems  = document.querySelectorAll('.window__dropitem'); 
 var windowDocsTitle = document.querySelector('.window__docs-title');
+var windowItemFirst = document.querySelector('.window__item-first');
+var activeItemTitle = document.querySelector('.active-item-title');
 
 
 
 windowMintitles.forEach( function(windowMintitle){
   windowMintitle.addEventListener('click',function() {
     this.parentElement.classList.toggle('active-droplist');
+   
   });
 });
+
+
+windowMintitles.forEach( function(windowMintitle){
+  // windowMintitle.addEventListener('click',function() {
+  //   var aItemText = activeItemTitle.textContent; 
+  //   windowItemFirst.textContent = aItemText;
+    
+  // });
+  windowMintitle.addEventListener('change', function() {
+    alert()
+  })
+
+});
+
+
 
 
 windowDropitems.forEach( function(windowDropitem){
   windowDropitem.addEventListener('click',function() {
       var DropItemText = windowDropitem.innerHTML;
       windowDocsTitle.innerHTML = DropItemText;
+      windowItemFirst.textContent =  activeItemTitle.textContent;
   });
 });
-
